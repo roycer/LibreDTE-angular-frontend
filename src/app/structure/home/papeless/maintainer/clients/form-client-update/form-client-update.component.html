@@ -1,0 +1,51 @@
+<form #form="ngForm" [formGroup]="form_client_update" (ngSubmit)="onSubmit(form_client_update.value,form_client_update.valid)">
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_document"><H5>Documento</H5></label>
+            <input type="text" class="form-control" placeholder="Documento" id="attu_client_document" formControlName="document">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_bussiness_name"><H5>Razon Social</H5></label>
+            <input type="text" class="form-control" placeholder="Razon Social" id="attu_client_bussiness_name" formControlName="bussiness_name">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_bussiness"><H5>Giro</H5></label>
+            <input type="text" class="form-control" placeholder="Giro" id="attu_client_bussiness" formControlName="bussiness">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_address"><H5>Direccion</H5></label>
+            <input type="text" class="form-control" placeholder="Direccion" id="attu_client_address" formControlName="address">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_commune"><H5>Comuna</H5></label>
+            <input type="text" class="form-control" placeholder="Comuna" id="attu_client_commune" formControlName="commune">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_client_city"><H5>Ciudad</H5></label>
+            <input type="text" class="form-control" placeholder="Ciudad" id="attu_client_city" formControlName="city">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-5"> 
+            <label class="form-label"><H5>Empresa</H5></label>
+            <select class="select2-tags" id="select_enterprise_client_update">
+                <option disabled>-- {{'Empresa'}} --</option>
+            </select>
+        </div>
+        <div class="col-auto my-1">
+            <div class="form-check">
+              <label class="form-check-label" for="autoSizingCheck2" id="label_extra_update">               
+                <input class="form-check-input" type="checkbox" id="attr_client_ppassport" formControlName="ppassport">              
+                   Extrangero
+              </label>
+            </div>
+        </div>
+    </div>
+        <div class="form-actions col-md-12">
+            <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!form_client_update.valid">{{'Actualizar'}}</button>
+        </div>
+        
+    
+
+</form>

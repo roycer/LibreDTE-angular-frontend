@@ -1,0 +1,31 @@
+<div class="row" [formGroup]="form_group_reference">
+    <div class="form-group col-lg-2"> 
+        <label class="form-label"><H5>Tipo de DTE Ref</H5></label>
+        <select class="form-control" formControlName="ref_tipo_dte">
+            <option disabled>-- {{'TIPO DTE REF'}} --</option>
+            <option *ngFor="let tipo_dte of tipos_dtes" [ngValue]="tipo_dte.id">{{tipo_dte.text}}</option>
+        </select>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Folio Ref</H5></label>
+        <input type="text" class="form-control" placeholder="Folio Ref" formControlName="ref_folio"/>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Fecha Emisión Ref</H5></label>
+        <label class="input-group datepicker" id="{{id_dp_fecha_emision}}">
+            <input type="text" class="form-control" placeholder="Fecha Emisión Ref" id="{{id_fecha_emision}}" formControlName="ref_fecha_emision"/>
+            <span class="input-group-addon"><i class="icmn-calendar"></i></span>
+        </label>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Código Ref</H5></label>
+        <select class="form-control" formControlName="ref_codigo">
+            <option></option>
+            <option *ngFor="let ref_codigo of ref_codigos" [ngValue]="ref_codigo.id">{{ref_codigo.text}}</option>
+        </select>
+    </div>
+    <div class="form-group col-lg-4">
+        <label class="form-label"><H5>Razón</H5></label>
+        <input type="text" class="form-control" placeholder="Razón" formControlName="ref_razon"/>
+    </div>
+</div>

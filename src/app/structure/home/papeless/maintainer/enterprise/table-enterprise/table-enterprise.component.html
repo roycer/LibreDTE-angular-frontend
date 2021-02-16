@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-12 col-lg-12 card-search">
+
+            <div class="form-input-icon form-input-icon-right">
+                <i class="icmn-search"></i>
+                <input type="text" id="search2" class="form-control" placeholder="Buscar por Empresa" (keyup)='onKeyUp($event)'>
+            </div>
+
+    </div>
+</div>
+<div class="row">
+    
+    <div class="col-lg-12">
+        <div>
+            <ngx-datatable #table class='material expandable' [rows]="temp_enterprises" [columnMode]="'force'"
+                [headerHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true" [rowHeight]="50"
+                [limit]="5" [sorts]="[{prop: 'id', dir: 'desc'}]"
+                [messages]="{emptyMessage: 'No se encontraron registros',  totalMessage: 'Total'}">
+
+                <ngx-datatable-column name="Rut" [sortable]="true" [prop]="'rut'"
+                    [flexGrow]="1" [width]="150">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Razon Social" [sortable]="true" [prop]="'bussiness_name'" [flexGrow]="1" [width]="200">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+                
+                <ngx-datatable-column name="Giro" [sortable]="true" [prop]="'bussiness'" [flexGrow]="1" [width]="100">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Ateco" [sortable]="true" [prop]="'bussiness_code'" [flexGrow]="1" [width]="200">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Direccion" [sortable]="true" [prop]="'address'" [flexGrow]="1" [width]="200">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Comuna" [sortable]="true" [prop]="'commune'" [flexGrow]="1" [width]="150">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Ciudad" [sortable]="true" [prop]="'city'" [flexGrow]="1" [width]="150">
+                    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                        <span (click)="sort()">{{column.name}}</span>
+                    </ng-template>
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <span> {{value}} </span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column [flexGrow]="1" [width]="100">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button title="Editar" style="font-size:12px;" class="btn-primary mr-2 mb-2" (click)="onClickUpdate(row)"><i style="color:rgb(255, 255, 255)" class="icmn-pencil2" aria-hidden="true"></i></button>
+                            <button title="Eliminar" style="font-size:12px;" class="btn-danger mr-2 mb-2" (click)="onClickDelete(row)"><i style="color:rgb(255, 255, 255)" class="icmn-bin" aria-hidden="true"></i></button>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+    </div>
+    
+</div>

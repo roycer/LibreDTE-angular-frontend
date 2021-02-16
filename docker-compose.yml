@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+
+  front_enjoy:
+    image: nginx:1.15.8-alpine
+    restart: always
+    ports:
+      - 4280:80
+    volumes:
+      - ./dist/myFrontend:/usr/share/nginx/html
+    networks:
+      default:
+        aliases:
+          - front_enjoy
+
+networks:
+  default:

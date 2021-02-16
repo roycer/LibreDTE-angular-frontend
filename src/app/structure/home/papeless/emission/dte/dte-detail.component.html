@@ -1,0 +1,33 @@
+<div class="row" [formGroup]="form_group_detail">
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Tipo de Línea</H5></label>
+        <select class="form-control" formControlName="det_tipo_linea">
+            <option></option>
+            <option *ngFor="let det_tipo_linea of det_tipos_lineas" [ngValue]="det_tipo_linea.id">{{det_tipo_linea.text}}</option>
+        </select>
+    </div>
+    <div class="form-group col-lg-2">
+
+        <label class="form-label"><H5>Nombre Item</H5></label>
+        <select class="select2-tags" id="{{id_select_product}}">
+            <option disabled>-- {{'Nombre Item'}} --</option>
+        </select>
+        <!-- <input type="text" class="form-control" placeholder="Nombre Item" formControlName="det_nombre_item"/> -->
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Glosa</H5></label>
+        <input type="text" class="form-control" placeholder="Glosa" formControlName="det_glosa"/>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Cantidad</H5></label>
+        <input type="number" class="form-control" placeholder="Cantidad" formControlName="det_cantidad"/>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Precio Unitario</H5></label>
+        <input type="number" class="form-control" placeholder="Precio Unitario" formControlName="det_precio_unitario"/>
+    </div>
+    <div class="form-group col-lg-2">
+        <label class="form-label"><H5>Total Linea</H5></label>
+        <label class="form-control">Total Linea: {{form_group_detail.value.det_cantidad * form_group_detail.value.det_precio_unitario}}</label>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<form #form="ngForm" [formGroup]="form_client_register" (ngSubmit)="onSubmit(form_client_register.value,form_client_register.valid)">
+
+    <div class="row">
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_document"><H5>Documento</H5></label>
+            <input type="text" class="form-control" placeholder="Documento" id="attr_client_document" formControlName="document">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_bussiness_name"><H5>Razón social</H5></label>
+            <input type="text" class="form-control" placeholder="Razón social" id="attr_client_bussiness_name" formControlName="bussiness_name">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_bussiness"><H5>Giro</H5></label>
+            <input type="text" class="form-control" placeholder="Giro" id="attr_client_bussiness" formControlName="bussiness">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_address"><H5>Dirección</H5></label>
+            <input type="text" class="form-control" placeholder="Nombre" id="attr_client_address" formControlName="address">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_commune"><H5>Comuna</H5></label>
+            <input type="text" class="form-control" placeholder="Comuna" id="attr_client_commune" formControlName="commune">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_client_city"><H5>Ciudad</H5></label>
+            <input type="text" class="form-control" placeholder="Ciudad" id="attr_client_city" formControlName="city">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4"> 
+            <label class="form-label"><H5>Empresa</H5></label>
+            <select class="select2-tags" id="select_enterprise_client">
+                <option disabled>-- {{'Empresa'}} --</option>
+            </select>
+        </div>
+        <div class="checkbox-inline">         
+            <div class="custom-control form-control-lg custom-checkbox">     
+                <br> 
+                <label class="form-check-label" for="autoSizingCheck2" id="label_extra">                       
+                    <input class="form-check-input" type="checkbox" id="attr_client_ppassport" formControlName="ppassport">
+                       Extranjero                 
+                </label>
+            </div>                            
+        </div>    
+    </div>
+    <div class="row">
+        <div class="form-actions col-md-1">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="!form_client_register.valid">{{'Registrar'}}</button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,42 @@
+<form #form="ngForm" [formGroup]="form_register" (ngSubmit)="onSubmit(form_register.value,form_register.valid)">
+
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <label class="form-label" for="attr_product_name"><H5>Nombre</H5></label>
+            <input type="text" class="form-control" placeholder="Nombre" id="attr_product_name" formControlName="name">
+        </div>
+        <div class="form-group col-lg-5">
+            <label class="form-label" for="attr_product_description"><H5>Descripcion</H5></label>
+            <input type="text" class="form-control" placeholder="Descripcion" id="attr_product_description" formControlName="description">
+        </div>
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_product_meaasure_unit"><H5>Unidad de Medida</H5></label>
+            <input type="text" class="form-control" placeholder="Unidad de Medida" id="attr_product_meaasure_unit" formControlName="measure_unit">
+        </div>
+        <div class="form-group col-lg-2">
+            <label class="form-label" for="attr_product_quantity"><H5>Cantidad</H5></label>
+            <input type="text" class="form-control" placeholder="Cantidad" id="attr_product_quantity" formControlName="quantity">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_product_price_unit"><H5>Precio Unitario</H5></label>
+            <input type="text" class="form-control" placeholder="Precio Unitario" id="attr_product_price_unit" formControlName="price_unit">
+        </div>
+        <div class="form-group col-lg-2">
+            <label class="form-label"><H5>Tipo de Producto</H5></label>
+            <select class="form-control" formControlName="type_line">
+                <option></option>
+                <option *ngFor="let det_tipo_linea of det_tipos_lineas" [ngValue]="det_tipo_linea.id">{{det_tipo_linea.text}}</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-2">
+            <label class="form-label" for="attr_procuct_total_line"><H5>Total</H5></label>
+            <input type="text" class="form-control" placeholder="Total" id="attr_procuct_total_line" formControlName="total_line">
+        </div>        
+    </div>
+    <div class="row">
+        <div class="form-actions col-md-1">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="!form_register.valid">{{'Registrar'}}</button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,41 @@
+<form #form="ngForm" [formGroup]="form_register" (ngSubmit)="onSubmit(form_register.value,form_register.valid)">
+
+    <div class="row">
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_rut"><H5>RUT</H5></label>
+            <input type="text" class="form-control" placeholder="RUT" id="attr_rut" formControlName="rut">
+        </div>
+        <div class="form-group col-lg-5">
+            <label class="form-label" for="attr_bussiness_name"><H5>Razon Social</H5></label>
+            <input type="text" class="form-control" placeholder="Razon Social" id="attr_bussiness_name" formControlName="bussiness_name">
+        </div>
+        <div class="form-group col-lg-4">
+            <label class="form-label" for="attr_bussiness"><H5>Giro</H5></label>
+            <input type="text" class="form-control" placeholder="Giro" id="attr_bussiness" formControlName="bussiness">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_bussiness_code"><H5>Acteco</H5></label>
+            <input type="text" class="form-control" placeholder="Acteco" id="attr_bussiness_code" formControlName="bussiness_code">
+        </div>
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_address"><H5>Direccion</H5></label>
+            <input type="text" class="form-control" placeholder="Direccion" id="attr_address" formControlName="address">
+        </div>
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_commune"><H5>Comuna</H5></label>
+            <input type="text" class="form-control" placeholder="Comuna" id="attr_commune" formControlName="commune">
+        </div>
+        <div class="form-group col-lg-3">
+            <label class="form-label" for="attr_city"><H5>Ciudad</H5></label>
+            <input type="text" class="form-control" placeholder="Ciudad" id="attr_city" formControlName="city">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-actions col-md-1">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="!form_register.valid">{{'Registrar'}}</button>
+        </div>
+    </div>
+
+</form>

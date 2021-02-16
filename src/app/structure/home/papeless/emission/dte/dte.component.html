@@ -1,0 +1,190 @@
+<section class="card">
+    <div class="card-header">
+        <h3 class="text-black"><strong>{{dte}}</strong></h3>
+    </div>
+    <div class="card-block">
+        <form #form="ngForm" [formGroup]="form_dte_register">
+            <h4 class="text-black"><strong>Cabecera</strong></h4>
+            <div class="row">
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Rut Emisor</H5></label>
+                    <input type="text"  [attr.disabled]="''" id="attr_cab_rut_emisor" placeholder="Rut Emisor"  class="form-control" formControlName="cab_rut_emisor">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Razón Social</H5></label>
+                    <select class="select2-tags" id="select_cab_razon_social">
+                        <option disabled>-- {{'Razón Social'}} --</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Giro</H5></label>
+                    <input type="text" [attr.disabled]="''" id="attr_cab_giro" placeholder="Giro"  class="form-control" formControlName="cab_giro">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Acteco</H5></label>
+                    <input type="text" [attr.disabled]="''" id="attr_cab_acteco" placeholder="Acteco"  class="form-control" formControlName="cab_acteco">
+                </div>
+                <div class="form-group col-lg-6"> 
+                    <label class="form-label"><H5>Dirección</H5></label>
+                    <input type="text" [attr.disabled]="''" id="attr_cab_direccion" placeholder="Dirección"  class="form-control" formControlName="cab_direccion">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Comuna</H5></label>
+                    <input type="text" [attr.disabled]="''" id="attr_cab_comuna" placeholder="Comuna"  class="form-control" formControlName="cab_comuna">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Ciudad</H5></label>
+                    <input type="text" [attr.disabled]="''" id="attr_cab_ciudad" placeholder="Ciudad"  class="form-control" formControlName="cab_ciudad">
+                </div>
+                <!--
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Tipo DTE</H5></label>
+                    <select class="form-control" id="attr_contract_type" formControlName="cab_tipo_dte">
+                        <option disabled>-- {{'TIPO DTE'}} --</option>
+                        <option *ngFor="let cab_tipo_dte of cab_tipos_dtes" [ngValue]="cab_tipo_dte.id">{{cab_tipo_dte.text}}</option>
+                    </select>
+                </div>
+                -->
+                <div class="form-group col-lg-3">
+                    <label class="form-label"><H5>Fecha Emisión</H5></label>
+                    <label class="input-group datepicker" id="attr_dp_cab_fecha_emision">
+                        <input type="text" class="form-control" placeholder="Fecha Emisión" id="attr_cab_fecha_emision" formControlName="cab_fecha_emision"/>
+                        <span class="input-group-addon"><i class="icmn-calendar"></i></span>
+                    </label>
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Forma de pago</H5></label>
+                    <select class="form-control" id="attr_cab_forma_pago" formControlName="cab_forma_pago">
+                        <option disabled selected>-- {{'FORMA DE PAGO'}} --</option>
+                        <option *ngFor="let cab_forma_pago of cab_formas_pagos" [ngValue]="cab_forma_pago.id">{{cab_forma_pago.text}}</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <hr>
+            <h4 class="text-black"><strong>Receptor</strong></h4>
+            <div class="row">
+                <div class="form-group col-lg-3">
+                    <label class="form-label"><H5>RUT/N° Documento</H5></label>
+                    <select class="select2-tags" id="select_rec_documento">
+                        <option disabled>-- {{'RUT/N° Documento'}} --</option>
+                    </select>
+                    <!-- <input type="text" placeholder="RUT/N° Documento"  class="form-control" (keyup)="onKeyRutReceptor($event)" formControlName="rec_documento"> -->
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Razón Social</H5></label>
+                    <input type="text" [attr.disabled]="!isEditRec ? '' : null" placeholder="Razón Social"  class="form-control" formControlName="rec_razon_social">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Giro</H5></label>
+                    <input type="text" [attr.disabled]="!isEditRec ? '' : null" placeholder="Giro"  class="form-control" formControlName="rec_giro">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Dirección</H5></label>
+                    <input type="text" [attr.disabled]="!isEditRec ? '' : null" placeholder="Dirección"  class="form-control" formControlName="rec_dirección">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Comuna</H5></label>
+                    <input type="text" [attr.disabled]="!isEditRec ? '' : null" placeholder="Comuna"  class="form-control" formControlName="rec_comuna">
+                </div>
+                <div class="form-group col-lg-3"> 
+                    <label class="form-label"><H5>Ciudad</H5></label>
+                    <input type="text" [attr.disabled]="!isEditRec ? '' : null" placeholder="Ciudad"  class="form-control" formControlName="rec_ciudad">
+                </div>
+            </div>
+
+            <hr>
+            <h4 class="text-black"><strong>Detalle</strong></h4>
+            <div class="row">
+                <div class="form-group col-lg-2">
+                    <button class="btn btn-success btn-block" (click)="addDetail()"><i class="icmn-plus"> Detalle</i></button>
+                </div>
+            </div>
+            <div formArrayName="details" *ngFor="let item of form_dte_register.get('details')['controls']; let i = index;">
+                <div [formGroupName]="i">
+                    <div  class="row">
+                        <div class="form-group col-lg-4">
+                            <label><strong>Detalle {{i+1}}</strong></label>
+                        </div>
+                    </div>
+                    <div  class="row">
+                        <div class="form-group col-lg-11">
+                            <dte-detail [form_group_detail]="form_dte_register.get('details')['controls'][i]" [products]="api_products"></dte-detail>
+                        </div>
+                        <div class="form-group col-lg-1">
+                            <label class="form-label"><H5>.</H5></label>
+                            <button class="btn btn-danger btn-block" (click)="removeDetail(i)"><i class="icmn-bin"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h4 class="text-black"><strong>Referencias</strong></h4>
+            <div class="row">
+                <div class="form-group col-lg-2">
+                    <button class="btn btn-success btn-block" (click)="addReference()"><i class="icmn-plus"> Referencias</i></button>
+                </div>
+            </div>
+            <div formArrayName="references" *ngFor="let item of form_dte_register.get('references')['controls']; let i = index;">
+                <div [formGroupName]="i">
+                    <div  class="row">
+                        <div class="form-group col-lg-4">
+                            <label><strong>Referencia {{i+1}}</strong></label>
+                        </div>
+                    </div>
+                    <div  class="row">
+                        <div class="form-group col-lg-11">
+                            <dte-reference [form_group_reference]="form_dte_register.get('references')['controls'][i]" [tipos_dtes]="cab_tipos_dtes"></dte-reference>
+                        </div>
+                        <div class="form-group col-lg-1">
+                            <label class="form-label"><H5>.</H5></label>
+                            <button class="btn btn-danger btn-block" (click)="removeReference(i)"><i class="icmn-bin"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h4 class="text-black"><strong>Totales</strong></h4>
+            <div class="row">
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL DESCUENTO</label>
+                    <div class="form-control"><H5>{{total_descuentos}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL EXENTO</label>
+                    <div class="form-control"><H5>{{total_exento}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL NO FACTURABLE</label>
+                    <div class="form-control"><H5>{{total_no_facturable}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL NETO</label>
+                    <div class="form-control"><H5>{{total_neto}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL IVA</label>
+                    <div class="form-control"><H5>{{total_neto * 0.19}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>TOTAL DOCUMENTO</label>
+                    <div class="form-control"><H5>{{total_neto + (total_neto*0.19) + total_exento}}</H5></div>
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <label>VALOR A PAGAR</label>
+                    <div class="form-control"><H5>{{total_neto + (total_neto*0.19) + total_exento + total_no_facturable}}</H5></div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group col-lg-3"> 
+                <button type="button" class="btn btn-success" [disabled]="!form_dte_register.valid" (click)="onRegister(form_dte_register.value)">Enviar</button>
+            </div>
+        </form>
+        
+    </div>
+</section>
+
+<!-- {{form_dte_register.value | json}}  -->
+
+

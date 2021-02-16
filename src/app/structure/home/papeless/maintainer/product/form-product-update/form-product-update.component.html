@@ -1,0 +1,38 @@
+<form #form="ngForm" [formGroup]="form_update" (ngSubmit)="onSubmit(form_update.value,form_update.valid)">
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_name"><H5>Nombre</H5></label>
+            <input type="text" class="form-control" placeholder="Nombre" id="attu_product_name" formControlName="name">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_description"><H5>Descripcion</H5></label>
+            <input type="text" class="form-control" placeholder="Descripcion" id="attu_product_description" formControlName="description">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_meaasure_unit"><H5>Unidad de Medida</H5></label>
+            <input type="text" class="form-control" placeholder="Unidad de Medida" id="attu_product_meaasure_unit" formControlName="measure_unit">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_quantity"><H5>Cantidad</H5></label>
+            <input type="text" class="form-control" placeholder="Cantidad" id="attu_product_quantity" formControlName="quantity">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_price_unit"><H5>Precio Unitario</H5></label>
+            <input type="text" class="form-control" placeholder="Precio Unitario" id="attu_product_price_unit" formControlName="price_unit">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_product_type_line"><H5>Tipo</H5></label>
+            <input type="text" class="form-control" placeholder="Tipo" id="attu_product_type_line" formControlName="type_line">
+        </div>
+        <div class="form-group col-md-12">
+            <label class="form-label" for="attu_procuct_total_line"><H5>Total</H5></label>
+            <input type="text" class="form-control" placeholder="Total" id="attu_procuct_total_line" formControlName="total_line">
+        </div>
+        <div class="form-actions col-md-12">
+            <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!form_update.valid">{{'Actualizar'}}</button>
+        </div>
+        
+    </div>
+
+</form>

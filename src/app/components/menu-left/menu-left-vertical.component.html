@@ -1,0 +1,148 @@
+<nav class="cat__menu-left">
+    <div class="cat__menu-left__lock cat__menu-left__action--menu-toggle">
+        <div class="cat__menu-left__pin-button">
+            <div><!-- --></div>
+        </div>
+    </div>
+    <div class="cat__menu-left__logo text-white text-center">
+        <a [routerLink]="['/']">
+            <img src="" />
+        </a>
+        <strong>{{username}}</strong>
+    </div>
+    <div class="cat__menu-left__inner">
+        <ul class="cat__menu-left__list">
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
+                    <span class="cat__menu-left__icon"><span class="fa fa-book"></span></span>
+                     Emision
+                </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte',33]">
+                            <span class="cat__menu-left__icon">33</span>
+                             FACTURA
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte',34]">
+                            <span class="cat__menu-left__icon">34</span>
+                             FACTURA EXENTA
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte',52]">
+                            <span class="cat__menu-left__icon">52</span>
+                            GUIA DE DESPACHO
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte',56]">
+                            <span class="cat__menu-left__icon">56</span>
+                            NOTA DE DEBITO
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte',61]">
+                            <span class="cat__menu-left__icon">61</span>
+                            NOTA DE CREDITO
+                        </a>
+                    </li>
+                </ul>                 
+            </li>
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
+                    <span class="cat__menu-left__icon"><span class="fa fa-file-text"></span></span>
+                     Consulta DTE
+                </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte']">
+                            <span class="cat__menu-left__icon">E</span>
+                             Documentos Emitidos
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item cat__menu-left__submenu">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon">R</span>
+                             Documentos Recibidos
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item">
+                                <a [routerLink]="['papeless/emission/dte']">
+                                    <span class="cat__menu-left__icon"></span>
+                                     Aprobacion / Reclamo DTE
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>                               
+            </li>
+            
+            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a [routerLink]="['papeless/maintainer/enterprise']">
+                    <span class="cat__menu-left__icon"><span class="fa fa-building-o"></span></span>
+                     Mantener Empresa
+                </a>
+            </li>
+            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a [routerLink]="['papeless/emission/dte']">
+                    <span class="cat__menu-left__icon"><span class="fa fa-user"></span></span>
+                     Mantener Usuario
+                </a>
+            </li>
+            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a [routerLink]="['papeless/maintainer/client']">
+                    <span class="cat__menu-left__icon"><span class="fa fa-users"></span></span>
+                     Mantener Clientes
+                </a>
+            </li>
+
+            <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a href="javascript: void(0);">
+                    <span class="cat__menu-left__icon"><span class="fa fa-file-text"></span></span>
+                     Mantener CAF
+                </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item">
+                        <a [routerLink]="['papeless/emission/dte']">
+                            <span class="cat__menu-left__icon"></span>
+                             Segmento CAF
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a [routerLink]="['papeless/maintainer/product']">
+                    <span class="cat__menu-left__icon"><span class="fa fa-archive"></span></span>
+                    Mantener Producto
+                </a>                
+            </li>
+            <!--
+            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                <a [routerLink]="['papeless/emission/dte']">
+                    <span class="cat__menu-left__icon"><span class="fa fa-search"></span></span>
+                    Buscador
+                </a>                
+            </li>-->
+            <li class="cat__menu-left__divider"><!-- --></li>
+            <li class="cat__menu-left__item">
+                <a href="javascript: void(0);" (click)="logout()">
+                    <!-- <span class="cat__core__donut cat__core__donut--danger"></span> -->
+                    <i class="dropdown-icon icmn-exit"></i>
+                    Salir
+                </a>               
+            </li>
+        </ul>        
+    </div>
+</nav>

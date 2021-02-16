@@ -1,0 +1,16 @@
+#label_extra_update {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#attr_client_ppassport{
+    width: 25px; 
+    height: 25px;
+    font-weight: bold;
+    line-height: 3em;
+    color: #ccc;
+    border-radius:10px solid #ddd;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

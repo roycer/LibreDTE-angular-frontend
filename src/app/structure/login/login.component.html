@@ -1,0 +1,30 @@
+<section>
+  <!-- <hr style="color: #fff; background-color: #fff;"> -->
+  <h1 class="text-center">Login</h1>
+
+  <hr>
+  <br>
+
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-4 control-label right">Usuario:</label>
+    <div class="col-sm-4">
+      <input  type="text" class="form-control  text-center" placeholder="User" id="newLoginUser" [(ngModel)]="newLogin.user" name="newLoginUser">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-4 control-label right">Usuario:</label>
+    <div class="col-sm-4">
+      <input  type="password" class="form-control text-center" placeholder="Constraseña" id="newLoginContrasena"  [(ngModel)]="newLogin.contrasena" name="newAttributeContrasena">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="text-center filter-block">
+    <button type="button" class="btn btn-success mr-2 mb-2" (click)="onLogin()" >
+      Iniciar Sesión
+    </button>
+  </div>
+
+</section>
